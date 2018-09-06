@@ -22,3 +22,36 @@ def hello(event, context):
         "event": event
     }
     """
+
+def NewMessage(event, context):
+    statusMessage = "Message saved successfully!!!"
+
+    #extract the message from the body of the message
+
+    #store the message by  making call to DAL
+
+    response = {
+        "statusCode": 200,
+        "body": json.dumps(statusMessage)
+    }
+    return response
+
+def IsNewMessage(event, context):
+    retVal = false
+    # Check the db for new messages
+
+    statusMessage = "Message Present: " + str(retVal)
+    response = {
+        "statusCode":200,
+        "body": json.dumps(statusMessage)
+    }
+
+def GetNewMessage(event, context):
+
+    msg = ''
+    #read if there is a new message is waiting to be read
+    statusMessage = "Message: " + msg
+    response = {
+        "statusCode":200,
+        "body": json.dumps(statusMessage)
+    }

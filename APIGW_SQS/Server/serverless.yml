@@ -16,6 +16,19 @@ functions:
       - http:
           path: Ping
           method: get
+  NewMessage:
+    handler: handler.NewMessage
+    events:
+      - http:
+          path: NewMessage
+          method: post
+  ReadNewMessage:
+    handler: handler.GetNewMessage
+    events:
+      - http:
+          path: NewMessage
+          method: get
+  
 # you can add statements to the Lambda function's IAM Role here
 #  iamRoleStatements:
 #    - Effect: "Allow"
